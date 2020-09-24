@@ -24,14 +24,18 @@
 </style>	
 </head>
 <body> 
-<h1 style="position: relative; margin-top: 10px; margin-left: 100px; z-index: 2">Gastronomia Mendoza</h1>
+<h1 style="position: relative; margin-top: 10px; margin-left: 80px; z-index: 2">Visor Gastronómico Gulero</h1>
 <img src="favicon.png" height= "45px" width="45px" align=right class="logogc">
 <div id="map" class="map map-home" style="margin:8px 0 8px 0;height:800px;"></div> 
 <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
 <script src="scripts/Leaflet.PolylineMeasure.js"></script>
 <script type="text/javascript" src="scripts/godoycruz.js"></script>
 <script type="text/javascript" src="scripts/.js"></script>
-<script type="text/javascript" src="scripts/Gula.js"></script>
+<script type="text/javascript" src="scripts/Helados.js"></script>
+<script type="text/javascript" src="scripts/Cafeterias.js"></script>
+<script type="text/javascript" src="scripts/Cervecerias.js"></script>
+<script type="text/javascript" src="scripts/Sushi.js"></script>
+<script type="text/javascript" src="scripts/EntrePanes.js"></script>
 <script src="scripts/leaflet-tilelayer-wmts.js"></script>
 <script>
 /*Argenmap*/
@@ -56,100 +60,54 @@ var mapabase_argenmap = new L.TileLayer.WMTS( 'https://wms.ign.gob.ar/geoserver/
 	});
 
 	var iconoVerde = new iconoComun({iconUrl: 'img/marker-icon-2x-green.png'}),
-		iconoRojo = new iconoComun({iconUrl: 'img/marker-icon-2x-red.png'}),
-		iconoNegro = new iconoComun({iconUrl: 'img/marker-icon-2x-black.png'}),
-		iconoAzul = new iconoComun({iconUrl: 'img/marker-icon-2x-blue.png'}),
-		iconoDorado = new iconoComun({iconUrl: 'img/marker-icon-2x-gold.png'}),
-		iconoNaranja= new iconoComun({iconUrl: 'img/marker-icon-2x-orange.png'}),
-		iconoGris = new iconoComun({iconUrl: 'img/marker-icon-2x-grey.png'}),
-		iconoVioleta = new iconoComun({iconUrl: 'img/marker-icon-2x-violet.png'}),
-		iconoAmarillo = new iconoComun({iconUrl: 'img/marker-icon-2x-yellow.png'});
-        iconocarne = new iconoComun({iconUrl:'img/market-icon-2x-carne.png'});
+		iconocarne = new iconoComun({iconUrl:'img/market-icon-2x-carne.png'});
 		iconocerveza = new iconoComun({iconUrl:'img/market-icon-2x-cerveza.png'});
+		iconohelado= new iconoComun({iconUrl:'img/market-icon-2x-helado.png'});
+		iconocafe= new iconoComun({iconUrl:'img/market-icon-2x-cafe.png'});
+		iconosushi= new iconoComun({iconUrl:'img/market-icon-2x-sushi.png'});
+		iconoentrepanes= new iconoComun({iconUrl:'img/market-icon-2x-entrepanes.png'});
+	
+	function crearIconohelado (feature, latlng) {
+		return L.marker(latlng, { icon: iconohelado })
+	}
+
+        var asignarIconohelado = {
+	  pointToLayer: crearIconohelado
+	}
 	
 	function crearIconocerveza (feature, latlng) {
 		return L.marker(latlng, { icon: iconocerveza })
 	}
 
         var asignarIconocerveza = {
-	  pointToLayer: crearIconocarne
+	  pointToLayer: crearIconocerveza
 	}
 	
-	function crearIconocarne (feature, latlng) {
-		return L.marker(latlng, { icon: iconocerveza })
+	function crearIconocafe (feature, latlng) {
+		return L.marker(latlng, { icon: iconocafe })
 	}
 
-        var asignarIconocarne = {
-	  pointToLayer: crearIconocarne
+        var asignarIconocafe = {
+	  pointToLayer: crearIconocafe
 	}
 	
-	function crearIconoVerde (feature, latlng) {
-		return L.marker(latlng, { icon: iconoVerde })
+	function crearIconosushi (feature, latlng) {
+		return L.marker(latlng, { icon: iconosushi })
 	}
 
-        var asignarIconoVerde = {
-	  pointToLayer: crearIconoVerde
-	}
-
-
-	function crearIconoRojo (feature, latlng) {
-		return L.marker(latlng, { icon: iconoRojo })
-	}
-
-	var asignarIconoRojo = {
-	  pointToLayer: crearIconoRojo
-	}
-
-        function crearIconoNegro (feature, latlng) {
-		return L.marker(latlng, { icon: iconoNegro })
-	}
-	var asignarIconoNegro = {
-	  pointToLayer: crearIconoNegro
-	}
-
-        function crearIconoAzul (feature, latlng) {
-		return L.marker(latlng, { icon: iconoAzul })
-	}
-	var asignarIconoAzul= {
-	  pointToLayer: crearIconoAzul
-	}
-
-        function crearIconoDorado (feature, latlng) {
-		return L.marker(latlng, { icon: iconoDorado })
-	}
-	var asignarIconoDorado = {
-	  pointToLayer: crearIconoDorado
-	}
-
-        function crearIconoNaranja (feature, latlng) {
-		return L.marker(latlng, { icon: iconoNaranja})
-	}
-	var asignarIconoNaranja = {
-	  pointToLayer: crearIconoNaranja
-	}
-
-        function crearIconoGris (feature, latlng) {
-		return L.marker(latlng, { icon: iconoGris  })
-	}
-	var asignarIconoGris  = {
-	  pointToLayer: crearIconoGris 
-	}
-
-        function crearIconoVioleta (feature, latlng) {
-		return L.marker(latlng, { icon: iconoVioleta })
-	}
-	var asignarIconoVioleta = {
-	  pointToLayer: crearIconoVioleta
-	}
-
-        function crearIconoAmarillo (feature, latlng) {
-		return L.marker(latlng, { icon: iconoAmarillo })
-	}
-	var asignarIconoAmarillo = {
-	  pointToLayer: crearIconoAmarillo
+        var asignarIconosushi = {
+	  pointToLayer: crearIconosushi
 	}
 	
-        /* POPUPS */
+	function crearIconoentrepanes (feature, latlng) {
+		return L.marker(latlng, { icon: iconoentrepanes })
+	}
+
+        var asignarIconoentrepanes = {
+	  pointToLayer: crearIconoentrepanes
+	}
+        
+		/* POPUPS */
 	function agregarPopup(feature, layer) { 
 		if (feature.properties && feature.properties.Nombre_1) { 
 				layer.bindPopup( "<strong>" + feature.properties.Nombre_1 + "</strong>"); 
@@ -160,47 +118,7 @@ var mapabase_argenmap = new L.TileLayer.WMTS( 'https://wms.ign.gob.ar/geoserver/
 				layer.bindPopup( "<strong>" + feature.properties.Nombre + "</strong>"); 
 		} 
 	}
-	function agregarPopupres(feature, layer) { 
-		if (feature.properties && feature.properties.UBICACION) { 
-				layer.bindPopup( "<strong>" + feature.properties.UBICACION + "</strong>"); 
-		} 
-	}
-		function agregarPopupjardinesmuni(feature, layer) { 
-		if (feature.properties && feature.properties.nombre) { 
-				layer.bindPopup( "<strong>" + feature.properties.nombre + "</strong>"); 
-		} 
-	}
-		function agregarPopupciclovias(feature, layer) { 
-		if (feature.properties && feature.properties.Distancia) { 
-				layer.bindPopup( "<strong>" + feature.properties.Distancia + "</strong>"); 
-		} 
-	}
-	function agregarPopupDistritos(feature, layer) { 
-			if (feature.properties && feature.properties.nombre) { 
-					layer.bindPopup( "<strong>" + feature.properties.nombre + "</strong>"); 
-			} 
-		}
-		function agregarPopupzoni(feature, layer) { 
-			if (feature.properties && feature.properties.Layer) { 
-					layer.bindPopup( "<strong>" + feature.properties.Layer + "</strong>"); 
-			} 
-		}
-	function agregarPopupredes(feature, layer) { 
-	        if (feature.properties && feature.properties.Estado) {
-			         layer.bindPopup( "<strong>" + feature.properties.Estado + "</strong>");
-     	    }
-		}
-	 function agregarPopupcloacas(feature, layer) {
-            if (feature.properties && feature.properties.Estado) {	 
-			         layer.bindPopup( "<strong>" + feature.properties.Estado + "</strong>");
-			}
-		}		
-	function agregarPopuplineas(feature, layer) {
-            if (feature.properties && feature.properties.TENSION) {	 
-			         layer.bindPopup( "<strong>" + feature.properties.TENSION + "</strong>");
-			}
-		}	
-
+	
 	
 /* BASE LAYERS */
 	var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -213,7 +131,11 @@ var mapabase_argenmap = new L.TileLayer.WMTS( 'https://wms.ign.gob.ar/geoserver/
 /* OVERLAYS Y GRUPOS */
 	var plazagc = L.marker([-32.92524, -68.84439]).bindPopup('Plaza GC.').openPopup(),
     	godoycruz = L.geoJson(godoycruz),
-	 gastr= L.geoJson(Gula, { pointToLayer: crearIconocerveza, onEachFeature: agregarPopupfarmacias});
+	 hela= L.geoJson(Helados, { pointToLayer: crearIconohelado, onEachFeature: agregarPopupfarmacias});
+	 cafe= L.geoJson(Cafeterias, { pointToLayer: crearIconocafe, onEachFeature: agregarPopupfarmacias});
+	 cerv= L.geoJson(Cervecerias, { pointToLayer: crearIconocerveza, onEachFeature: agregarPopupfarmacias});
+	 sush= L.geoJson(Sushi, { pointToLayer: crearIconosushi, onEachFeature: agregarPopupfarmacias});
+	 pan= L.geoJson(EntrePanes, { pointToLayer: crearIconoentrepanes, onEachFeature: agregarPopupfarmacias});
 	 
 		
 /* CREACIÓN DEL MAPA CON BASE LAYERS Y OVERLAYS */
@@ -229,7 +151,11 @@ var mapabase_argenmap = new L.TileLayer.WMTS( 'https://wms.ign.gob.ar/geoserver/
 	};
 	
 	var overlayMaps = {
-		        "Establecimientos Gastronomicos": gastr,
+		        "Heladerías": hela,
+				"Cafeterías": cafe,
+				"Cervecerías": cerv,
+				"Sushi":sush,
+				"Entre Panes":pan,
 					
                              							 
                  };
