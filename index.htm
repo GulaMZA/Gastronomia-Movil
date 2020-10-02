@@ -39,6 +39,9 @@
 <script type="text/javascript" src="scripts/Vino.js"></script>
 <script type="text/javascript" src="scripts/Pastas.js"></script>
 <script type="text/javascript" src="scripts/Pizza.js"></script>
+<script type="text/javascript" src="scripts/Panaderia.js"></script>
+<script type="text/javascript" src="scripts/Carnes.js"></script>
+<script type="text/javascript" src="scripts/Vegano.js"></script>
 <script src="scripts/leaflet-tilelayer-wmts.js"></script>
 
 
@@ -184,6 +187,13 @@ var mapabase_argenmap = new L.TileLayer.WMTS( 'https://wms.ign.gob.ar/geoserver/
 	  pointToLayer: crearIconopizza
 	}
 	
+	function crearIconocarne (feature, latlng) {
+		return L.marker(latlng, { icon: iconocarne })
+	}
+
+        var asignarIconocarne = {
+	  pointToLayer: crearIconocarne
+	}
 		/* POPUPS */
 	
     function agregarPopupfarmacias(feature, layer) { 
@@ -213,11 +223,12 @@ var mapabase_argenmap = new L.TileLayer.WMTS( 'https://wms.ign.gob.ar/geoserver/
 	 trag= L.geoJson(Tragos, { pointToLayer: crearIconococktail, onEachFeature: agregarPopupfarmacias});
 	 past= L.geoJson(Pastas, { pointToLayer: crearIconopastas, onEachFeature: agregarPopupfarmacias});
 	 pizz= L.geoJson(Pizza, { pointToLayer: crearIconopizza, onEachFeature: agregarPopupfarmacias});
+	 pan= L.geoJson(Panaderia, { pointToLayer: crearIconopanaderia, onEachFeature: agregarPopupfarmacias});
+	 carn= L.geoJson(Carnes, { pointToLayer: crearIconocarne, onEachFeature: agregarPopupfarmacias});
+	 veg= L.geoJson(Vegano, { pointToLayer: crearIconovegano, onEachFeature: agregarPopupfarmacias});
 
 	 
-	 
-		
-/* CREACIÓN DEL MAPA CON BASE LAYERS Y OVERLAYS */
+	 	/* CREACIÓN DEL MAPA CON BASE LAYERS Y OVERLAYS */
 	var map = L.map('map', {
 			layers: [mapabase_argenmap,]
 		}).setView([-32.8915, -68.8502], 15);
@@ -240,6 +251,9 @@ var mapabase_argenmap = new L.TileLayer.WMTS( 'https://wms.ign.gob.ar/geoserver/
 				"Tragos":trag,
 				"Pastas":past,
 				"Pizza":pizz,
+				"Panadería-Pastelería":pan,
+				"Carnes":carn,
+				"Vegetariano-Vegano":veg,
 				
 				
 					
