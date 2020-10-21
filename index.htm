@@ -217,7 +217,7 @@ var mapabase_argenmap = new L.TileLayer.WMTS( 'https://wms.ign.gob.ar/geoserver/
 	 cafe= L.geoJson(Cafeterias, { pointToLayer: crearIconocafe, onEachFeature: agregarPopupfarmacias});
 	 cerv= L.geoJson(Cervecerias, { pointToLayer: crearIconocerveza, onEachFeature: agregarPopupfarmacias});
 	 sush= L.geoJson(Sushi, { pointToLayer: crearIconosushi, onEachFeature: agregarPopupfarmacias});
-	 pan= L.geoJson(EntrePanes, { pointToLayer: crearIconoentrepanes, onEachFeature: agregarPopupfarmacias});
+	 lomo= L.geoJson(EntrePanes, { pointToLayer: crearIconoentrepanes, onEachFeature: agregarPopupfarmacias});
 	 vin= L.geoJson(Vino, { pointToLayer: crearIconovino, onEachFeature: agregarPopupfarmacias});
 	 plat= L.geoJson(alplato, { pointToLayer: crearIconoalplato, onEachFeature: agregarPopupfarmacias});
 	 trag= L.geoJson(Tragos, { pointToLayer: crearIconococktail, onEachFeature: agregarPopupfarmacias});
@@ -245,7 +245,7 @@ var mapabase_argenmap = new L.TileLayer.WMTS( 'https://wms.ign.gob.ar/geoserver/
 				"Cafeterías": cafe,
 				"Cervecerías": cerv,
 				"Sushi":sush,
-				"Entre Panes":pan,
+				"Entre Panes":lomo,
 				"Vinos":vin,
 				"Al Plato":plat,
 				"Tragos":trag,
