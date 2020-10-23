@@ -212,8 +212,7 @@ var mapabase_argenmap = new L.TileLayer.WMTS( 'https://wms.ign.gob.ar/geoserver/
 		mapabase_ot = L.tileLayer(otUrl, {maxZoom: 20, attribution: otAttrib});
 	
 /* OVERLAYS Y GRUPOS */
-	var plazagc = L.marker([-32.92524, -68.84439]).bindPopup('Plaza GC.').openPopup(),
-    	hela= L.geoJson(Helados, { pointToLayer: crearIconohelado, onEachFeature: agregarPopupfarmacias});
+	var hela= L.geoJson(Helados, { pointToLayer: crearIconohelado, onEachFeature: agregarPopupfarmacias});
 	 cafe= L.geoJson(Cafeterias, { pointToLayer: crearIconocafe, onEachFeature: agregarPopupfarmacias});
 	 cerv= L.geoJson(Cervecerias, { pointToLayer: crearIconocerveza, onEachFeature: agregarPopupfarmacias});
 	 sush= L.geoJson(Sushi, { pointToLayer: crearIconosushi, onEachFeature: agregarPopupfarmacias});
