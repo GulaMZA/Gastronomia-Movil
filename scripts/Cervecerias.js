@@ -1,6 +1,6 @@
 var Cervecerias ={
 "type": "FeatureCollection",
-"name": "Cervecerias",
+"name": "Cervezas",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
 { "type": "Feature", "properties": { "id": null, "Nombre": "El Botellón", "Descrip": "Cerveza tirada y vino por copa. Terraza ideal para las noches de calor en la ciudad. Pizzas, papas, hamburguesas. Opciones vegetarianas y veganas." }, "geometry": { "type": "Point", "coordinates": [ -68.847983112483178, -32.88899273137249 ] } },
@@ -11,7 +11,7 @@ var Cervecerias ={
 { "type": "Feature", "properties": { "id": null, "Nombre": "Peñón del Águila", "Descrip": "Cerveza tirada y comida para picar." }, "geometry": { "type": "Point", "coordinates": [ -68.856293448516595, -32.89202179973072 ] } },
 { "type": "Feature", "properties": { "id": null, "Nombre": "Brader Hops", "Descrip": "Cerveza tirada. Lomos, hamburguesas y pizzas" }, "geometry": { "type": "Point", "coordinates": [ -68.851173762707106, -32.90887289418955 ] } },
 { "type": "Feature", "properties": { "id": null, "Nombre": "Héroes Carranza", "Descrip": "Cerveza tirada. Lomos, hamburguesas. Opciones vegetarianas." }, "geometry": { "type": "Point", "coordinates": [ -68.841008096951171, -32.918049753866576 ] } },
-{ "type": "Feature", "properties": { "id": null, "Nombre": "Hangar 52 Beer Garden", "Descrip": "Jardín cervecero. Cerveza tirada. Carritos de comida." }, "geometry": { "type": "Point", "coordinates": [ -68.850965088965566, -32.931882352749206 ] } },
+{ "type": "Feature", "properties": { "id": null, "Nombre": "El Bebedero", "Descrip": "Patio cervecero." }, "geometry": { "type": "Point", "coordinates": [ -68.850965088965566, -32.931882352749206 ] } },
 { "type": "Feature", "properties": { "id": null, "Nombre": "El Rinconcito al Paso", "Descrip": "Cerveza artesanal y cócteles. Papas y pizzas. Martes de 2x1 en pizzas, miércoles 2x1 en lomos." }, "geometry": { "type": "Point", "coordinates": [ -68.859664295216874, -32.891337786712562 ] } },
 { "type": "Feature", "properties": { "id": null, "Nombre": "Believe Irish Pub", "Descrip": "Cervecería. Hamburguesas, pizzas, papas." }, "geometry": { "type": "Point", "coordinates": [ -68.843617236633875, -32.894312923547957 ] } },
 { "type": "Feature", "properties": { "id": null, "Nombre": "The Beer Club", "Descrip": "Jardín cervecero. Cerveza tirada y cócteles. Hamburguesas, hot dogs, pizzas, papas." }, "geometry": { "type": "Point", "coordinates": [ -68.882884274358872, -32.98534561308378 ] } },
