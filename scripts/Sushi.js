@@ -10,7 +10,6 @@ var Sushi ={
 { "type": "Feature", "properties": { "id": null, "Nombre": "Omaki Sushi", "Descrip": "Sushi libre y combos." }, "geometry": { "type": "Point", "coordinates": [ -68.799541802441169, -32.90006655969502 ] } },
 { "type": "Feature", "properties": { "id": null, "Nombre": "Yoko Sushi (Ciudad)", "Descrip": "Restó de sushi. Opciones vegetarianas." }, "geometry": { "type": "Point", "coordinates": [ -68.858143624846377, -32.891285955547175 ] } },
 { "type": "Feature", "properties": { "id": null, "Nombre": "Jengibre Sushi", "Descrip": "Sushi y cócteles." }, "geometry": { "type": "Point", "coordinates": [ -68.855436245263789, -32.892262466128628 ] } },
-{ "type": "Feature", "properties": { "id": null, "Nombre": "Deziro Sushi", "Descrip": "Sushi, woks, paellas." }, "geometry": { "type": "Point", "coordinates": [ -68.845084593813766, -32.903809583887828 ] } },
 { "type": "Feature", "properties": { "id": null, "Nombre": "Yoko Sushi (Chacras)", "Descrip": "Buen sushi y excelente atención. Lindo espacio al aire libre. Opciones vegetarianas" }, "geometry": { "type": "Point", "coordinates": [ -68.886783427223179, -32.986323825193558 ] } }
 ]
 }
